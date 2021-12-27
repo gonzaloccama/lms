@@ -1,0 +1,54 @@
+<li class="sidebar-menu-item{% if slug === 'student-dashboard' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}student-dashboard.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">star_half</i>
+    <span class="sidebar-menu-text">Dashboard</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'student-courses' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}student-courses.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">queue_play_next</i>
+    <span class="sidebar-menu-text">Courses</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'student-course-purchase' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}student-course-purchase.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">shopping_cart</i>
+    <span class="sidebar-menu-text">Purchase Course</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'student-lessons' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}student-lessons.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dns</i>
+    <span class="sidebar-menu-text">Browse Lessons</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'student-quiz' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}student-quiz.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">live_help</i>
+    <span class="sidebar-menu-text">Take Quiz</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'student-discussions' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}student-discussions.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">forum</i>
+    <span class="sidebar-menu-text">Discussions</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'edit-account' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}edit-account.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">settings</i>
+    <span class="sidebar-menu-text">Edit Account</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'student-billing' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}student-billing.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">monetization_on</i>
+    <span class="sidebar-menu-text">Billing</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'login' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="login.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">exit_to_app</i>
+    <span class="sidebar-menu-text">Logout</span>
+  </a>
+</li>

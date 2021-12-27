@@ -1,0 +1,91 @@
+<div class="mdk-drawer js-mdk-drawer" id="events-drawer" data-align="end">
+  <div class="mdk-drawer__content">
+    <div class="sidebar sidebar-light sidebar-left" data-perfect-scrollbar>
+
+      {% set days = [{
+        date: "Thursday, 28 Feb",
+        items: [{
+          time: "12:30 PM",
+          duration: "2 hrs",
+          title: "Marketing Team Meeting",
+          avatars: [
+            "assets/images/256_joao-silas-636453-unsplash.jpg",
+            "assets/images/256_jeremy-banks-798787-unsplash.jpg",
+            "assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
+          ],
+          location: "16845 Hicks Road"
+        }]
+      }, {
+        date: "Wednesday, 27 Feb",
+        items: [{
+          time: "07:48 PM",
+          duration: "30 min",
+          title: "Call Alex",
+          phone: "202-555-0131"
+        }]
+      }, {
+        date: "Tuesday, 26 Feb",
+        items: [{
+        time: "03:13 PM",
+        duration: "2 hrs",
+        title: "Design Team Meeting",
+        avatars: [
+          "assets/images/256_rsz_1andy-lee-642320-unsplash.jpg",
+          "assets/images/256_michael-dam-258165-unsplash.jpg",
+          "assets/images/256_luke-porter-261779-unsplash.jpg",
+          "assets/images/stories/256_rsz_clem-onojeghuo-193397-unsplash.jpg"
+        ],
+        location: "16845 Hicks Road"
+      }]
+      }, {
+        date: "Monday, 25 Feb",
+        items: [{
+          time: "12:30 PM",
+          duration: "2 hrs",
+          title: "Call Wendy",
+          avatars: [
+            "assets/images/256_michael-dam-258165-unsplash.jpg"
+          ],
+          phone: "202-555-0131"
+        }]
+      }] %}
+
+      {% for item in days %}
+      <small class="text-dark-gray px-3 py-1">
+        <strong>{{ item.date }}</strong>
+      </small>
+
+      <div class="list-group list-group-flush">
+      {% for item in item.items %}
+        <div class="list-group-item bg-light">
+          <div class="row">
+            <div class="col-auto d-flex flex-column">
+              <small>{{ item.time }}</small>
+              <small class="text-dark-gray">{{ item.duration }}</small>
+            </div>
+            <div class="col{% if item.avatars|length === 1 %} d-flex{% endif %}">
+              <div class="d-flex flex-column flex">
+                <a href="#" class="text-body"><strong class="text-15pt">{{ item.title }}</strong></a>
+                {% if item.location %}
+                <small class="text-muted d-flex align-items-center"><i class="material-icons icon-16pt mr-1">location_on</i> {{ item.location }}</small>
+                {% endif %}
+                {% if item.phone %}
+                <small class="text-muted d-flex align-items-center"><i class="material-icons icon-16pt mr-1">phone</i> {{ item.phone }}</small>
+                {% endif %}
+              </div>
+              {% if item.avatars|length > 1 %}<div class="avatar-group mt-2">{% endif %}
+                {% for avatar in item.avatars %}
+                <div class="avatar avatar-xs">
+                  <img src="{{ avatar }}" alt="Avatar" class="avatar-img rounded-circle">
+                </div>
+                {% endfor %}
+              {% if item.avatars|length > 1 %}</div>{% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

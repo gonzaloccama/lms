@@ -86,7 +86,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/plugins/dragula.js":
+/***/ "../../src/js/plugins/dragula.js":
 /*!***********************************!*\
   !*** ./src/js/plugins/dragula.js ***!
   \***********************************/
@@ -133,7 +133,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/plugins/dragula.js */"./src/js/plugins/dragula.js");
+module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/plugins/dragula.js */"../../src/js/plugins/dragula.js");
 
 
 /***/ })

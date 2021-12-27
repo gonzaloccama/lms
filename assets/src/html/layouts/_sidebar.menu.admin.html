@@ -1,0 +1,31 @@
+<li class="sidebar-menu-item{% if slug === 'admin-dashboard' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}admin-dashboard.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i>
+    <span class="sidebar-menu-text">Dashboard</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'admin-emails' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}admin-emails.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">email</i>
+    <span class="sidebar-menu-text">Emails</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'admin-chat' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}admin-chat.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">comment</i>
+    <span class="sidebar-menu-text">Chat</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'admin-tickets' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}admin-tickets.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">local_offer</i>
+    <span class="sidebar-menu-text">Tickets</span>
+    <span class="badge badge-warning badge-notifications ml-auto">NEW</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'admin-trello' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}admin-trello.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">touch_app</i>
+    <span class="sidebar-menu-text">Trello</span>
+  </a>
+</li>

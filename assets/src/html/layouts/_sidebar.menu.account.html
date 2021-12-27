@@ -1,0 +1,27 @@
+<ul class="sidebar-menu">
+  <li class="sidebar-menu-item{% if slug === 'edit-account' %} active{% endif %}">
+    <a class="sidebar-menu-button" href="{{ prefix or '' }}edit-account.html">
+      <span class="sidebar-menu-text">Edit Information</span>
+    </a>
+  </li>
+  <li class="sidebar-menu-item{% if slug === 'payments' %} active{% endif %}">
+    <a class="sidebar-menu-button" href="{{ prefix or '' }}edit-account.html">
+      <span class="sidebar-menu-text">Payments</span>
+    </a>
+  </li>
+  <li class="sidebar-menu-item{% if slug === 'billing' %} active{% endif %}">
+    <a class="sidebar-menu-button" href="{{ prefix or '' }}edit-account.html">
+      <span class="sidebar-menu-text">Billing</span>
+    </a>
+  </li>
+  <li class="sidebar-menu-item{% if slug === 'change-password' %} active{% endif %}">
+    <a class="sidebar-menu-button" href="{{ prefix or '' }}edit-account.html">
+      <span class="sidebar-menu-text">Change Password</span>
+    </a>
+  </li>
+  <li class="sidebar-menu-item">
+    <a class="sidebar-menu-button" href="{{ prefix or '' }}login.html">
+      <span class="sidebar-menu-text">Logout</span>
+    </a>
+  </li>
+</ul>

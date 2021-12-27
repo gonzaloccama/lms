@@ -1,0 +1,30 @@
+.navbar-light {
+  .navbar-nav {
+    > .active {
+      position: relative;
+      &::before {
+        content: "";
+        background-color: $primary;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+  .text-light {
+    color: $navbar-light-active-color !important;
+  }
+  .nav-icon {
+    color: rgba(#707070, .24);
+  }
+
+  [data-toggle="sidebar"] .nav-icon {
+    color: $text-muted;
+  }
+
+  .navbar-toggler-company > span {
+    // background-color: $primary-dark;
+  }
+}

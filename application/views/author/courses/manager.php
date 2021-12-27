@@ -1,133 +1,79 @@
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+
 <?php
 $this->view('admin/template/header');
+$this->view('admin/modals');
 ?>
 
 <div class="container-fluid page__container">
-	<div class="card">
-		<div class="card-header  bg-white">
 
+	<div id="noti-action"></div>
+	<?php if ($this->session->flashdata('message')): ?>
+
+		<div class="alert alert-dismissible bg-success text-white border-0 fade show" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<strong><i class="fas fa-exclamation-circle"></i> Aviso -
+			</strong> <?php echo $this->session->flashdata('message'); ?>
+		</div>
+
+	<?php endif; ?>
+
+	<div class="card shadow">
+		<div class="card-header">
 			<div class="d-flex align-items-center">
-				<h4 style="margin-top: 10px;" class="card-header__title"><?= strtoupper($sub_title) ?></h4>
+				<h4 style="margin-top: 10px;text-transform: uppercase;" ><?= strtoupper($info['sub_title']) ?></h4>
 				<a href="<?= base_url() . 'author/courses/add' ?>"
-				   class="btn btn-outline-primary btn-rounded ml-auto"><i class="material-icons">add</i>
-					Nuevo curso</a>
+				   class="btn btn-outline-primary ml-auto"><i class="material-icons">add_to_photos</i>
+					Curso</a>
 			</div>
-
 		</div>
-	</div>
+		<div class="card-body bg-secondary">
 
-
-	<div class="card">
-		<div class="card-header card-header-large bg-white">
-			<h4 class="card-header__title">LISTA DE CURSOS</h4>
-		</div>
-		<div class="card-body avatar-list">
-			<form action="#" class="mb-3 border-bottom pb-3">
-				<div class="d-flex">
-					<div class="search-form mr-3 search-form--light">
-						<input type="text" class="form-control" placeholder="Buscar curso" id="searchSample02">
-						<button class="btn" type="button"><i class="material-icons">search</i></button>
-					</div>
-
-					<div class="form-inline ml-auto">
-						<div class="form-group mr-3">
-							<label for="custom-select" class="form-label mr-1">Categoría</label>
-							<select id="custom-select" class="form-control custom-select" style="width: 200px;">
-								<option selected>Todas las categorias</option>
-								<option value="1">Vue.js</option>
-								<option value="2">Node.js</option>
-								<option value="3">GitHub</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="published01" class="form-label mr-1">Publicado</label>
-							<select id="published01" class="form-control custom-select" style="width: 200px;">
-								<option selected>Publicado</option>
-								<option value="1">Espera</option>
-								<option value="3">Todas</option>
-							</select>
-						</div>
-					</div>
+			<div class="d-flex">
+				<div class="search-form mr-3 search-form--light">
+					<input type="text" class="form-control" placeholder="Buscar..." name="search_text"
+						   id="search_text" aria-label="Search">
+					<button class="btn" type="button" id="searchBtn"><i class="material-icons">search</i></button>
 				</div>
-			</form>
-			<div class="container">
-				<div class="row tab-pane active show fade card-form__body card-body">
-					<!--				<div class="card-form__body card-body">-->
-					<?php
-					foreach ($courses as $course):
-						?>
 
-						<div class="col-md-6">
-
-							<div class="card">
-
-								<div class="card-body">
-
-
-									<div class="d-flex flex-column flex-sm-row">
-										<a href="#" class="avatar mb-3 w-xs-plus-down-100 mr-sm-3">
-											<img src="<?= base_url() . $course->thumbnail ?>"
-												 alt="Card image cap" class="avatar-course-img">
-										</a>
-										<div class="flex" style="min-width: 200px;">
-											<div class="d-flex">
-												<div>
-													<h4 class="card-title mb-1"><a href="#"><?= $course->title ?></a>
-													</h4>
-
-													<p class="text-muted block-ellipsis">
-														<?= $course->short_description ?>
-													</p>
-												</div>
-												<div class="dropdown ml-auto">
-													<a href="#" class="dropdown-toggle text-muted" data-caret="false"
-													   data-toggle="dropdown">
-														<i class="material-icons">more_vert</i>
-													</a>
-													<div class="dropdown-menu dropdown-menu-right">
-														<a class="dropdown-item"
-														   href="<?= base_url() . 'author/courses/curriculum/' . urlencode($course->id) ?>/4">Editar
-															curso</a>
-														<a class="dropdown-item" href="#">Estadísticas</a>
-														<div class="dropdown-divider"></div>
-														<a class="dropdown-item text-danger" href="#">Archivar</a>
-													</div>
-												</div>
-											</div>
-											<div class="d-flex align-items-end">
-												<div class="d-flex flex flex-column mr-3">
-													<div class="d-flex align-items-center py-2 border-bottom">
-														<span class="mr-2"><?= $course->is_free_course ? 'GRATIS' : 'S&sol; ' . $course->price ?></span>
-														<small class="text-muted ml-auto">34 SALES</small>
-													</div>
-													<div class="d-flex align-items-center py-2">
-														<span class="badge mr-2"
-															  style="color: white; background-color: <?= $course->color ?>"><?= $course->category ?></span>
-														<span class="badge badge-soft-secondary"><?= $course->level ?></span>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-
-
-								</div>
-
-							</div>
-
-						</div>
-					<?php
-					endforeach;
-					?>
-					<!--				</div>-->
+				<div class="form-inline ml-auto">
+					<div class="form-group mr-3">
+						<label for="custom-select" class="form-label mr-1 text-white">Categoría</label>
+						<select id="custom-select" class="form-control custom-select" style="width: 200px;">
+							<option selected value="0">Todas las categorias</option>
+							<?php
+							if (isset($categories) && !empty($categories)):
+								foreach ($categories as $category):
+									?>
+									<option value="<?= $category->id ?>"><?= $category->name ?></option>
+								<?php
+								endforeach;
+							endif;
+							?>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="actived01" class="form-label mr-1 text-white">Publicado</label>
+						<select id="actived01" class="form-control custom-select" style="width: 200px;">
+							<option value="0" selected>Todas</option>
+							<option value="1">Activos</option>
+							<option value="2">Pendientes</option>
+						</select>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div class="card-body" id="content-all-courses">
+
+		</div>
+
 	</div>
 
 </div>
 
 <?php
-$this->view('author/template/sidebar');
+$this->view($info['sidebar']);
 $this->view('admin/template/footer');
 ?>

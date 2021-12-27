@@ -1,158 +1,297 @@
-<!--	modals-->
-<!--  add-section Up Modal -->
-<div id="modal-add-section" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-body">
-				<div class="px-3">
-					<div class="d-flex justify-content-center mt-2 mb-4 navbar-light">
-						<a href="index.html" class="navbar-brand" style="min-width: 0">
-							<!-- LOGO -->
-							<svg width="26px" viewBox="0 0 27 26" version="1.1" xmlns="http://www.w3.org/2000/svg"
-								 xmlns:xlink="http://www.w3.org/1999/xlink">
-								<g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
-									<path d="M21.9257604,14.9506975 C20.582703,15.0217165 19.3145795,14.3502722 18.6558508,13.2193504 C18.5961377,13.1299507 18.488013,13.0821416 18.3788008,13.0968482 C18.2695887,13.1115549 18.1791809,13.1860986 18.1471473,13.287853 L16.3403333,18.8266167 C16.0783106,19.5012544 15.4036423,19.9432488 14.6567374,19.9295884 C13.9098324,19.915928 13.2530282,19.4495818 13.0177202,18.7658483 L10.3561926,9.20532122 C10.3224612,9.0828362 10.2066255,8.99820016 10.075223,9.00002907 C9.94382048,9.00185799 9.83056595,9.0896826 9.8005142,9.21305538 C9.53809432,10.6490488 9.07561673,12.0442508 8.42563983,13.3607751 C7.81040896,14.4321066 6.59978897,15.0547797 5.33446397,14.9506975 L0.286383595,14.9506975 C0.200836429,14.9508269 0.119789989,14.987678 0.0652579686,15.0512416 C0.0105052402,15.1148427 -0.011403821,15.1989481 0.00568007946,15.2799517 C1.26517458,21.5063521 6.92177656,26 13.500072,26 C20.0783674,26 25.7349694,21.5063521 26.9944639,15.2799517 C27.0112295,15.1987308 26.9894777,15.1145345 26.935158,15.050392 C26.8808383,14.9862496 26.7996356,14.9488738 26.7137603,14.9484877 C23.5217604,14.9499609 21.9257604,14.9506975 21.9257604,14.9506975 Z"
-										  opacity="0.539999962"></path>
-									<path d="M5.48262697,13.1162874 C6.53570764,13.1162874 6.62233928,13.1162874 7.63604194,9.25361392 C7.86780969,8.37139838 8.14008055,7.33311522 8.48548201,6.11058557 C8.7087856,5.42413873 9.37946641,4.96506482 10.1258577,4.98776578 C10.8742462,4.96784002 11.5440567,5.43246093 11.761733,6.1225074 L14.4619398,15.7986995 C14.4940991,15.9151627 14.6022445,15.9971672 14.7273152,15.9999282 C14.8523859,16.0026893 14.9643174,15.9255432 15.0019812,15.8106214 L16.5152221,11.1654422 C16.7421482,10.5403405 17.3447552,10.1140124 18.0318383,10.0924774 C18.6964712,10.0434044 19.3301356,10.3708193 19.6553377,10.9313408 C19.7678463,11.1405147 19.8803549,11.3453535 19.9759873,11.5426056 C20.6296623,12.8128226 20.8198019,13.1119522 21.7761252,13.1119522 L26.7186288,13.1119522 C26.7943575,13.1119652 26.8669186,13.0826781 26.9200192,13.030667 C26.9730799,12.97881 27.0019231,12.9083695 26.9999003,12.8355824 C26.9032945,5.71885474 20.8862135,-0.00118613704 13.4977698,1.84496545e-07 C6.10932623,0.00118650603 0.0942250201,5.72315932 8.19668591e-05,12.8399177 C-0.00175692205,12.9131783 0.0274115935,12.9840093 0.080884445,13.0361333 C0.134357296,13.0882573 0.207535985,13.1171917 0.283603687,13.1162874 L5.48262697,13.1162874 Z"></path>
-								</g>
-							</svg>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
-							<span class="ml-2">Agregar sección</span>
-						</a>
-					</div>
-					<hr>
-					<form action="#">
-						<div class="form-group">
-							<label for="username">Titulo:</label>
-							<input class="form-control" type="text" name="title" id="title" required=""
-								   placeholder="E.g. Titulo"/>
-						</div>
-						<hr>
-						<div class="form-group text-center">
-							<button class="btn btn-outline-success mx-1" type="submit">Guardar</button>
-							<button class="btn btn-outline-secondary mx-1" data-dismiss="modal">Cancelar</button>
+<?php
+if ($this->uri->segment(3) == 'edit' || $this->uri->segment(1) == 'author' && $this->uri->segment(3) == ''
+		|| ($this->uri->segment(2) == 'category' && $this->uri->segment(3) == ''
+		|| ($this->uri->segment(1) == 'admin' && $this->uri->segment(3) == ''))):
+	if ($this->uri->segment(3) == 'edit'):
+		?>
+		<!--	modals-->
+		<!--  add-section Up Modal -->
+		<div id="modal-add-section" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header bg-dark text-white ">
+						<h6 class="modal-title ml-4" id="modal-center-title">Agregar nueva sección</h6>
+						<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div> <!-- // END .modal-header -->
+					<form action="" method="post" id="form-section">
+						<div class="modal-body">
+							<div class="px-3" id="content-add-section">
+
+								<div class="form-group">
+									<input hidden type="text" id="id_section">
+									<label for="title_section">Titulo:</label>
+									<input class="form-control" type="text" name="title_section" id="title_section"
+										   placeholder="E.g. Introducción" required>
+
+								</div>
+
+							</div>
+						</div> <!-- // END .modal-body -->
+						<div class="modal-footer">
+
+							<button class="btn btn-outline-primary mx-1" type="submit" id="add-section">Guardar
+							</button>
+							<button class="btn btn-outline-danger mx-1" data-dismiss="modal">Cancelar</button>
+
 						</div>
 					</form>
-				</div>
-			</div> <!-- // END .modal-body -->
-		</div> <!-- // END .modal-content -->
-	</div> <!-- // END .modal-dialog -->
-</div> <!-- // END .modal -->
+				</div> <!-- // END .modal-content -->
+			</div> <!-- // END .modal-dialog -->
+		</div> <!-- // END .modal -->
 
-<!--end add-section-->
+		<!--end add-section-->
 
-<!--  add-lesson Up Modal -->
-<div id="modal-add-quiz" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-body">
-				<div class="px-3">
-					<div class="d-flex justify-content-center mt-2 mb-4 navbar-light">
-						<a href="index.html" class="navbar-brand" style="min-width: 0">
-							<!-- LOGO -->
-							<svg width="26px" viewBox="0 0 27 26" version="1.1" xmlns="http://www.w3.org/2000/svg"
-								 xmlns:xlink="http://www.w3.org/1999/xlink">
-								<g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
-									<path d="M21.9257604,14.9506975 C20.582703,15.0217165 19.3145795,14.3502722 18.6558508,13.2193504 C18.5961377,13.1299507 18.488013,13.0821416 18.3788008,13.0968482 C18.2695887,13.1115549 18.1791809,13.1860986 18.1471473,13.287853 L16.3403333,18.8266167 C16.0783106,19.5012544 15.4036423,19.9432488 14.6567374,19.9295884 C13.9098324,19.915928 13.2530282,19.4495818 13.0177202,18.7658483 L10.3561926,9.20532122 C10.3224612,9.0828362 10.2066255,8.99820016 10.075223,9.00002907 C9.94382048,9.00185799 9.83056595,9.0896826 9.8005142,9.21305538 C9.53809432,10.6490488 9.07561673,12.0442508 8.42563983,13.3607751 C7.81040896,14.4321066 6.59978897,15.0547797 5.33446397,14.9506975 L0.286383595,14.9506975 C0.200836429,14.9508269 0.119789989,14.987678 0.0652579686,15.0512416 C0.0105052402,15.1148427 -0.011403821,15.1989481 0.00568007946,15.2799517 C1.26517458,21.5063521 6.92177656,26 13.500072,26 C20.0783674,26 25.7349694,21.5063521 26.9944639,15.2799517 C27.0112295,15.1987308 26.9894777,15.1145345 26.935158,15.050392 C26.8808383,14.9862496 26.7996356,14.9488738 26.7137603,14.9484877 C23.5217604,14.9499609 21.9257604,14.9506975 21.9257604,14.9506975 Z"
-										  opacity="0.539999962"></path>
-									<path d="M5.48262697,13.1162874 C6.53570764,13.1162874 6.62233928,13.1162874 7.63604194,9.25361392 C7.86780969,8.37139838 8.14008055,7.33311522 8.48548201,6.11058557 C8.7087856,5.42413873 9.37946641,4.96506482 10.1258577,4.98776578 C10.8742462,4.96784002 11.5440567,5.43246093 11.761733,6.1225074 L14.4619398,15.7986995 C14.4940991,15.9151627 14.6022445,15.9971672 14.7273152,15.9999282 C14.8523859,16.0026893 14.9643174,15.9255432 15.0019812,15.8106214 L16.5152221,11.1654422 C16.7421482,10.5403405 17.3447552,10.1140124 18.0318383,10.0924774 C18.6964712,10.0434044 19.3301356,10.3708193 19.6553377,10.9313408 C19.7678463,11.1405147 19.8803549,11.3453535 19.9759873,11.5426056 C20.6296623,12.8128226 20.8198019,13.1119522 21.7761252,13.1119522 L26.7186288,13.1119522 C26.7943575,13.1119652 26.8669186,13.0826781 26.9200192,13.030667 C26.9730799,12.97881 27.0019231,12.9083695 26.9999003,12.8355824 C26.9032945,5.71885474 20.8862135,-0.00118613704 13.4977698,1.84496545e-07 C6.10932623,0.00118650603 0.0942250201,5.72315932 8.19668591e-05,12.8399177 C-0.00175692205,12.9131783 0.0274115935,12.9840093 0.080884445,13.0361333 C0.134357296,13.0882573 0.207535985,13.1171917 0.283603687,13.1162874 L5.48262697,13.1162874 Z"></path>
-								</g>
-							</svg>
 
-							<span class="ml-2">Agregar sección</span>
-						</a>
+		<!-- begin  select type lesson Up Modal -->
+		<div id="modal-type-lesson" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header bg-dark text-white ">
+						<h6 class="modal-title ml-4" id="modal-center-title">Seleccionar lección</h6>
+						<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div> <!-- // END .modal-header -->
+					<div class="modal-body">
+						<div class="px-3">
+							<form action="#">
+								<div class="form-group">
+
+									<label for="type-lesson">
+										<b>Selecciona tipo de lección</b>
+									</label><br>
+
+									<select name="type-lesson" id="type-lesson" class="form-control"
+											data-toggle="select">
+										<option value="YouTube">YouTube</option>
+										<option value="Vimeo">Vimeo</option>
+										<option value="Video-url">Video url</option>
+										<option value="Documento">Documento</option>
+										<option value="Imagen">Imagen</option>
+										<option value="Iframe-embed">Iframe embed</option>
+									</select>
+
+								</div>
+
+							</form>
+						</div>
+					</div> <!-- // END .modal-body -->
+					<div class="modal-footer">
+
+						<button class="btn btn-outline-primary mx-1" id="select-type-lesson">Siguiente</button>
+						<button class="btn btn-outline-danger mx-1" data-dismiss="modal">Cancelar</button>
+
 					</div>
-					<hr>
-					<form action="#">
-						<div class="form-group">
-							<label for="username">Titulo del quiz:</label>
-							<input class="form-control" type="text" name="title" id="title" required=""
-								   placeholder="E.g. Titulo"/>
+				</div> <!-- // END .modal-content -->
+			</div> <!-- // END .modal-dialog -->
+		</div> <!-- // END .modal -->
+
+		<!--end select type lesson-->
+
+		<!-- begin  add lesson Up Modal -->
+		<div class="modal fade" id="modal-add-lesson" tabindex="-1" role="dialog" aria-labelledby="modal-center-title"
+			 aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable" role="document">
+				<form method="post" class="modal-content" id="form-add-lesson" enctype="multipart/form-data">
+					<div class="modal-header bg-dark text-white ">
+						<h6 class="modal-title ml-4" id="modal-title-lesson">Agregar nueva lección</h6>
+						<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div> <!-- // END .modal-header -->
+					<div class="modal-body">
+						<div id="inner-container">
+
 						</div>
-						<div class="form-group">
-							<label for="username">Sección:</label>
-							<input class="form-control" type="text" name="title" id="title" required=""
-								   placeholder="E.g. Titulo"/>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-outline-danger mx-1" data-dismiss="modal">Cancelar</button>
+						<button class="btn btn-outline-primary mx-1" type="submit" id="add-type-lesson">Guardar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- end  add lesson Up Modal -->
+
+		<!-- begin  sort element Up Modal -->
+		<div id="modal-sort-section" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-sort-title"
+			 aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable" role="document">
+				<form method="post" id="frm-sort-up" class="modal-content">
+					<div class="modal-header bg-dark text-white ">
+						<h6 class="modal-title ml-4" id="modal-sort-title">Ordenar sección</h6>
+						<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div> <!-- // END .modal-header -->
+					<div class="modal-body">
+						<div class="ml-3 m-2 mr-3" id="sort-view">
+
 						</div>
-						<div class="form-group">
-							<label for="username">Instrucción:</label>
-							<input class="form-control" type="text" name="title" id="title" required=""
-								   placeholder="E.g. Titulo"/>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-outline-primary mx-1" type="submit" id="update-sort-section">Guardar
+						</button>
+						<button class="btn btn-outline-danger mx-1" data-dismiss="modal">Cancelar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- end  sort element Up Modal -->
+
+		<!-- begin  manager quiz Up Modal -->
+		<div class="modal fade" id="modal-manager-quiz" tabindex="-1" role="dialog" aria-labelledby="modal-center-title"
+			 aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header bg-dark text-white ">
+						<h6 class="modal-title ml-4" id="manager-title-quiz">Administrar evaluaciones</h6>
+						<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div> <!-- // END .modal-header -->
+					<div class="modal-body">
+						<div class="container pb-3 pt-3" style="background-color: #f3f3f3">
+							<div class="d-flex align-items-center">
+								<b style="margin-top: 5px;font-size: 14px; font-family: Sans-Serif;"
+								   id="title-mngr-question"></b>
+								<div class="btn-group mb-2 mt-2 ml-auto">
+									<button type="button" class="btn btn-outline-secondary add-question"
+											style="width: 90px" id="btn-add-questions">Nuevo
+									</button>
+									<button type="button" class="btn btn-outline-secondary" style="width: 90px"
+											id="btn-sort-questions">Sort
+									</button>
+								</div>
+							</div>
+							<hr>
+							<div id="inner-manager-quiz">
+								hol
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<!--						<button class="btn btn-outline-danger mx-1" data-dismiss="modal">Cancelar</button>-->
+						<!--						<button class="btn btn-outline-primary mx-1" type="submit" id="add-manager-quiz">Guardar</button>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end  manager quiz Up Modal -->
+
+		<!-- begin  add question Up Modal -->
+		<div id="modal-add-question" class="modal fade" tabindex="-1" role="dialog"
+			 aria-labelledby="modal-question-title"
+			 aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable" role="document">
+				<form method="post" id="frm-add-question" class="modal-content">
+					<div class="modal-header bg-dark text-white ">
+						<h6 class="modal-title ml-4" id="modal-question-title">Agregar preguntas</h6>
+						<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div> <!-- // END .modal-header -->
+					<div class="modal-body">
+						<div class="pb-2 pt-2" style="background-color: #D0E1F4">
+							<a class="btn btn-link text-primary" id="close-add-question">
+								<i class="fas fa-arrow-alt-circle-left"></i>
+								&ensp; Gestionar evaluación
+							</a>
 						</div>
 						<hr>
-						<div class="form-group text-center">
-							<button class="btn btn-outline-success mx-1" type="submit">Guardar</button>
-							<button class="btn btn-outline-secondary mx-1" data-dismiss="modal">Cancelar</button>
+						<div class="ml-3 m-2 mr-3">
+							<div class="form-group">
+								<label for="title-question">Título <span style="color: darkred">*</span></label>
+								<div class="input-group input-group-merge">
+									<input type="text" id="title-question" name="title-question"
+										   class="form-control form-control-appended" placeholder="¿?"
+										   value="">
+									<div class="input-group-append">
+										<div class="input-group-text">
+											<span class="fas fa-file-signature"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="number_of_options">Número de opciones <span style="color: darkred">*</span></label>
+								<div class="input-group mb-3">
+									<input type="text" id="number_of_options" class="form-control"
+										   name="number_of_options" value="" placeholder="3">
+									<div class="input-group-append">
+										<button class="btn btn-primary add-option-question" type="button">OK</button>
+									</div>
+								</div>
+							</div>
+							<div id="add-question-view">
+
+							</div>
 						</div>
-					</form>
-				</div>
-			</div> <!-- // END .modal-body -->
-		</div> <!-- // END .modal-content -->
-	</div> <!-- // END .modal-dialog -->
-</div> <!-- // END .modal -->
-
-<!--end add-lesson-->
-
-<!--  add-quiz Up Modal -->
-<div id="modal-add-lesson" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-body">
-				<div class="px-3">
-					<div class="d-flex justify-content-center mt-2 mb-4 navbar-light">
-						<a href="index.html" class="navbar-brand" style="min-width: 0">
-							<!-- LOGO -->
-							<svg width="26px" viewBox="0 0 27 26" version="1.1" xmlns="http://www.w3.org/2000/svg"
-								 xmlns:xlink="http://www.w3.org/1999/xlink">
-								<g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
-									<path d="M21.9257604,14.9506975 C20.582703,15.0217165 19.3145795,14.3502722 18.6558508,13.2193504 C18.5961377,13.1299507 18.488013,13.0821416 18.3788008,13.0968482 C18.2695887,13.1115549 18.1791809,13.1860986 18.1471473,13.287853 L16.3403333,18.8266167 C16.0783106,19.5012544 15.4036423,19.9432488 14.6567374,19.9295884 C13.9098324,19.915928 13.2530282,19.4495818 13.0177202,18.7658483 L10.3561926,9.20532122 C10.3224612,9.0828362 10.2066255,8.99820016 10.075223,9.00002907 C9.94382048,9.00185799 9.83056595,9.0896826 9.8005142,9.21305538 C9.53809432,10.6490488 9.07561673,12.0442508 8.42563983,13.3607751 C7.81040896,14.4321066 6.59978897,15.0547797 5.33446397,14.9506975 L0.286383595,14.9506975 C0.200836429,14.9508269 0.119789989,14.987678 0.0652579686,15.0512416 C0.0105052402,15.1148427 -0.011403821,15.1989481 0.00568007946,15.2799517 C1.26517458,21.5063521 6.92177656,26 13.500072,26 C20.0783674,26 25.7349694,21.5063521 26.9944639,15.2799517 C27.0112295,15.1987308 26.9894777,15.1145345 26.935158,15.050392 C26.8808383,14.9862496 26.7996356,14.9488738 26.7137603,14.9484877 C23.5217604,14.9499609 21.9257604,14.9506975 21.9257604,14.9506975 Z"
-										  opacity="0.539999962"></path>
-									<path d="M5.48262697,13.1162874 C6.53570764,13.1162874 6.62233928,13.1162874 7.63604194,9.25361392 C7.86780969,8.37139838 8.14008055,7.33311522 8.48548201,6.11058557 C8.7087856,5.42413873 9.37946641,4.96506482 10.1258577,4.98776578 C10.8742462,4.96784002 11.5440567,5.43246093 11.761733,6.1225074 L14.4619398,15.7986995 C14.4940991,15.9151627 14.6022445,15.9971672 14.7273152,15.9999282 C14.8523859,16.0026893 14.9643174,15.9255432 15.0019812,15.8106214 L16.5152221,11.1654422 C16.7421482,10.5403405 17.3447552,10.1140124 18.0318383,10.0924774 C18.6964712,10.0434044 19.3301356,10.3708193 19.6553377,10.9313408 C19.7678463,11.1405147 19.8803549,11.3453535 19.9759873,11.5426056 C20.6296623,12.8128226 20.8198019,13.1119522 21.7761252,13.1119522 L26.7186288,13.1119522 C26.7943575,13.1119652 26.8669186,13.0826781 26.9200192,13.030667 C26.9730799,12.97881 27.0019231,12.9083695 26.9999003,12.8355824 C26.9032945,5.71885474 20.8862135,-0.00118613704 13.4977698,1.84496545e-07 C6.10932623,0.00118650603 0.0942250201,5.72315932 8.19668591e-05,12.8399177 C-0.00175692205,12.9131783 0.0274115935,12.9840093 0.080884445,13.0361333 C0.134357296,13.0882573 0.207535985,13.1171917 0.283603687,13.1162874 L5.48262697,13.1162874 Z"></path>
-								</g>
-							</svg>
-
-							<span class="ml-2">Agregar sección</span>
-						</a>
 					</div>
-					<hr>
-					<form action="#">
-						<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="section" id="youtube"
-									   value="youtube">
-								<label class="form-check-label" for="youtube">YouTube</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="section" id="vimeo" value="vimeo">
-								<label class="form-check-label" for="vimeo">Vimeo</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="section" id="video_url" value="video_url">
-								<label class="form-check-label" for="video_url">Video url</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="section" id="document" value="document">
-								<label class="form-check-label" for="document">Documento</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="section" id="image" value="image">
-								<label class="form-check-label" for="image">Imagen</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="section" id="iframe_embed" value="iframe_embed">
-								<label class="form-check-label" for="iframe_embed">Iframe embed</label>
-							</div>
-						</div>
-						<hr>
-						<div class="form-group text-center">
-							<button class="btn btn-outline-success mx-1" type="submit">Siguiente</button>
-							<button class="btn btn-outline-secondary mx-1" data-dismiss="modal">Cancelar</button>
-						</div>
-					</form>
-				</div>
-			</div> <!-- // END .modal-body -->
-		</div> <!-- // END .modal-content -->
-	</div> <!-- // END .modal-dialog -->
-</div> <!-- // END .modal -->
+					<div class="modal-footer">
+						<button class="btn btn-outline-primary mx-1" type="submit" id="update-question">Guardar
+						</button>
+						<button class="btn btn-outline-danger mx-1" data-dismiss="modal">Cancelar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- end  add question Up Modal -->
 
-<!--end add-quiz-->
+	<?php
+	endif;
+	?>
+
+	<!-- Modal Delete field -->
+	<div id="myModalDelete" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-center-title"
+		 aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-dark text-white ">
+					<h6 class="modal-title ml-4" id="modal-delete-title">Eliminar sección</h6>
+					<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div> <!-- // END .modal-header -->
+				<div class="modal-body">
+					<div class="text-center">
+						<i class="fas fa-exclamation-triangle fa-5x p-2 text-danger"></i>
+						<h6 class="p-2" style="font-weight: normal;" id="modal-delete-body">¡Su elección se eliminará permanentemente!</h6>
+					</div>
+				</div> <!-- // END .modal-body -->
+				<div class="modal-footer">
+					<button type="button" id="btn-remove" class="btn btn-outline-primary">Eliminar</button>
+					<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+				</div> <!-- // END .modal-footer -->
+			</div> <!-- // END .modal-content -->
+		</div> <!-- // END .modal-dialog -->
+	</div> <!-- // END .modal -->
+
+<!--Modal Affirm-->
+	<div id="modal-affirm-action" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-affirm-title" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-dark text-white">
+					<h5 class="modal-title" id="modal-affirm-title">Cambiar estado</h5>
+					<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div> <!-- // END .modal-header -->
+				<div class="modal-body text-center" id="modal-affirm-body" style="font-size: 18px; font-weight: bold;">
+
+				</div> <!-- // END .modal-body -->
+				<div class="modal-footer">
+					<button type="button" id="btn-affirm" class="btn btn-outline-primary">Aceptar</button>
+					<button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+				</div> <!-- // END .modal-footer -->
+			</div> <!-- // END .modal-content -->
+		</div> <!-- // END .modal-dialog -->
+	</div> <!-- // END .modal -->
+
+<?php
+endif;
+?>

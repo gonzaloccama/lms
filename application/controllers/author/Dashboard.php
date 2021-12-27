@@ -2,28 +2,44 @@
 
 class Dashboard extends CI_Controller
 {
-    function __construct()
-    {
-        parent::__construct();
+	function __construct()
+	{
+		parent::__construct();
 
-        // $this->load->library('pagination');
+		// $this->load->library('pagination');
 
-        // $this->load->helper('url');
+		// $this->load->helper('url');
 
-         $this->load->model('author/dashboard_model', 'dashboard');
+		$this->load->model('author/dashboard_model', 'dashboard');
 
-        // $this->load->library('session');
-    }
+		// $this->load->library('session');
+	}
 
-    function index()
-    {
-		$data['page_title'] = 'Instructor - Dashboard';
-		$data['title'] = 'Instructor';
-		$data['sub_title'] = 'Dashboard';
-		$data['active'] = 1;
+	function index()
+	{
+		if (!$this->session->userdata('is_logged') || !($this->session->userdata('role_id') == 3)){
+			redirect('/auth/login');
+		}
 
-		$data['course'] = $this->dashboard->ListTable(1, 'course');
+		$data['info'] = array(
+			'page_title' => 'Instructor - Dashboard',
+			'title' => 'Dashboard',
+			'sub_title' => '',
+			'active' => 1,
+			'script' => 'author/dashboard/script',
+			'sidebar' => 'author/template/sidebar',
+		);
 
-		$this->load->view('author/dashboard', $data);
-    }
+		$dt_courses = array('user_id' => $this->session->userdata('id'));
+		$dt_status = array(
+			'user_id' => $this->session->userdata('id'),
+			'status' => 1,
+		);
+
+		$data['courses'] = $this->dashboard->ListTable('course', $dt_courses);
+		$data['num_courses'] = $this->dashboard->count_field('course', $dt_courses);
+		$data['status'] = $this->dashboard->count_field('course', $dt_status);
+
+		$this->load->view('author/dashboard/index', $data);
+	}
 }

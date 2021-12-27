@@ -86,7 +86,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/check-selected-row.js":
+/***/ "../../src/js/check-selected-row.js":
 /*!**************************************!*\
   !*** ./src/js/check-selected-row.js ***!
   \**************************************/
@@ -118,7 +118,7 @@ domFactory.handler.register('check-selected-row', checkSelectedRow);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/check-selected-row.js */"./src/js/check-selected-row.js");
+module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/check-selected-row.js */"../../src/js/check-selected-row.js");
 
 
 /***/ })

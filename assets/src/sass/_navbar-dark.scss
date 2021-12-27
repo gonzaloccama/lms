@@ -1,0 +1,71 @@
+.navbar-dark {
+  &.bg-dark, &.bg-primary {
+   [class*="border-"] {
+      border-color: rgba(white,.24) !important;
+   }
+  }
+
+  .search-form {
+    border-color: transparent;
+    .form-control {
+      color: rgba(white, .84);
+    }
+  }
+
+  &.bg-dark,&.bg-primary {
+    .search-form {
+      background-color: rgba(0,0,0,.24);
+      .form-control::placeholder {
+        color: #66768A;
+        font-weight: 500;
+        
+      }
+      .btn {
+        color: rgba(white, .54);
+      }
+    }
+  }
+
+  &[class*=primary] .search-form {
+    background-color: rgba(0,0,0,.12);
+    .form-control::placeholder {
+      color: white;
+    }
+    .btn {
+      color: rgba(white, .54);
+    }
+  }
+  .navbar-toggler {
+    color: #ffffff;
+  }
+  .navbar-toggler-custom {
+    .material-icons {
+      color: white;
+    }
+  }
+  .nav-icon,
+  .navbar-notifications-indicator {
+    color: rgba(white, .54);
+  }
+
+  [data-toggle="sidebar"] .nav-icon {
+    color: white;
+  }
+
+  .navbar-toggler-company > span {
+    background-color: $primary;
+  }
+}
+
+.navbar-dark {
+  .navbar-circle-link span {
+    background: #fff;
+  }
+}
+
+.navbar-light {
+  .navbar-circle-link span {
+    background: #efefef;
+    color: $text-muted !important;
+  }
+}

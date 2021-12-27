@@ -799,7 +799,7 @@ __webpack_require__(/*! ./_add-to-unscopables */ "./node_modules/core-js/modules
 
 /***/ }),
 
-/***/ "./src/js/app.js":
+/***/ "../../src/js/app.js":
 /*!***********************!*\
   !*** ./src/js/app.js ***!
   \***********************/
@@ -808,11 +808,11 @@ __webpack_require__(/*! ./_add-to-unscopables */ "./node_modules/core-js/modules
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _preloader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./preloader */ "./src/js/preloader.js");
+/* harmony import */ var _preloader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./preloader */ "../../src/js/preloader.js");
 /* harmony import */ var _preloader__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_preloader__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidebar */ "./src/js/sidebar.js");
+/* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidebar */ "../../src/js/sidebar.js");
 /* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sidebar__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./perfect-scrollbar */ "./src/js/perfect-scrollbar.js");
+/* harmony import */ var _perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./perfect-scrollbar */ "../../src/js/perfect-scrollbar.js");
 /* harmony import */ var _perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__);
 
 
@@ -834,7 +834,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/js/perfect-scrollbar.js":
+/***/ "../../src/js/perfect-scrollbar.js":
 /*!*************************************!*\
   !*** ./src/js/perfect-scrollbar.js ***!
   \*************************************/
@@ -862,7 +862,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/js/preloader.js":
+/***/ "../../src/js/preloader.js":
 /*!*****************************!*\
   !*** ./src/js/preloader.js ***!
   \*****************************/
@@ -880,7 +880,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/js/sidebar.js":
+/***/ "../../src/js/sidebar.js":
 /*!***************************!*\
   !*** ./src/js/sidebar.js ***!
   \***************************/
@@ -944,7 +944,7 @@ __webpack_require__(/*! core-js/modules/es6.array.find */ "./node_modules/core-j
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/app.js */"./src/js/app.js");
+module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/app.js */"../../src/js/app.js");
 
 
 /***/ })

@@ -86,7 +86,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/page.admin-dashboard.js":
+/***/ "../../src/js/page.admin-dashboard.js":
 /*!****************************************!*\
   !*** ./src/js/page.admin-dashboard.js ***!
   \****************************************/
@@ -224,7 +224,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/page.admin-dashboard.js */"./src/js/page.admin-dashboard.js");
+module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/page.admin-dashboard.js */"../../src/js/page.admin-dashboard.js");
 
 
 /***/ })

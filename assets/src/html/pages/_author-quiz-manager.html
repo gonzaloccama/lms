@@ -1,0 +1,61 @@
+<div class="page__heading border-bottom">
+  <div class="{{ containerClass }} page__container d-flex align-items-center">
+    <h1 class="mb-0">{{ title }}</h1>
+    <a href="#" class="btn btn-success ml-auto"><i class="material-icons">add</i> New Quiz</a>
+  </div>
+</div>
+
+<div class="{{ containerClass }} page__container">  
+    
+    <form action="#" class="mb-3 border-bottom">
+      <div class="form-group form-inline">
+        <label class="form-label mr-1" for="custom-select">Category</label><br>
+        <select id="custom-select" class="form-control custom-select" style="width: 200px;">
+          <option selected>All categories</option>
+          <option value="1">Vue.js</option>
+          <option value="2">Node.js</option>
+          <option value="3">GitHub</option>
+        </select>
+      </div>
+    </form>
+
+    {% set items = [{
+      image: "assets/images/logos/vuejs.svg",
+      title: "Vue.js Deploy Quiz",
+      completed: 25
+    }, {
+      image: "assets/images/logos/gitlab.png",
+      title: "GitHub Basic Setup",
+      completed: 410
+    }, {
+      image: "assets/images/logos/javascript.svg",
+      title: "Javascript for Front-End",
+      completed: 50
+    }] %}
+  
+    <div class="card-columns">
+      {% for item in items %}
+      <div class="card">
+        <div class="card-body media">
+          <div class="media-left">
+            <a href="#" class="avatar avatar-lg mr-1">
+              <img src="{{ item.image }}" alt="Card image cap" class="avatar-course-img">
+            </a>
+          </div>
+          <div class="media-body align-self-center">
+            <h4 class="card-title mb-0"><a href="#">{{ item.title }}</a></h4>
+            <span class="text-muted">{{ item.completed }} Completed</span>
+          </div>
+        </div>
+        <div class="card-footer d-flex bg-light">
+          <div>
+              <a href="#" class="btn btn-light btn-sm">Pending Review <span class="badge badge-soft-secondary ml-1">5</span></a> 
+          </div>
+          <div class="ml-auto">
+              <a href="#" class="btn btn-primary btn-sm"><i class="material-icons icon-16pt">edit</i> Edit </a> 
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>

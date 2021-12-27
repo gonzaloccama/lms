@@ -1,0 +1,80 @@
+.page .nav-tabs {
+  padding-left: $grid-gutter-width;
+  background: #ffffff;
+  a {
+    font-size: 1rem;
+    padding: .5rem .5rem;
+    margin-right: $grid-gutter-width;
+  }
+}
+.card-header-tabs-basic, .nav-tabs {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  > div {
+    display: flex;
+  }
+  a {
+    padding: .5rem .75rem;
+    color: rgba($body-color, .54);
+    font-weight: 600;
+    &:hover {
+      text-decoration: none;
+      color: rgba(0,0,0,.84);
+    }
+  }
+  .active {
+    color: rgba(0,0,0,.84);
+    border-bottom: 2px solid $primary;
+  }
+}
+
+.nav-tabs-custom {
+  z-index: 2;
+  position: relative;
+
+  .nav-item {
+    margin-bottom: -1px;
+    border-top-color: $primary;
+  }
+
+  .nav-item + .nav-item {
+    margin-left: .5rem;
+  }
+
+  .nav-link {
+    padding: .75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    &__count {
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+    color: rgba(0,0,0,.54);
+
+    &.disabled {
+      opacity: .75;
+      background-color: $text-muted !important;
+      color: #fff;  
+    }
+    &.active, &:hover {
+      color: rgba(0,0,0,.84);
+    }
+    border-width: 1px;
+    border-bottom-width: 0;
+    border-color: transparent;
+    &:hover {
+      border-color: transparent;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    border-color: $card-border-color;
+  }
+}
+
+.card-tab {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

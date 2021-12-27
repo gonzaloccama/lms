@@ -1,0 +1,43 @@
+<li class="sidebar-menu-item{% if slug === 'author-dashboard' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}author-dashboard.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i>
+    <span class="sidebar-menu-text">Dashboard</span>
+    <span class="badge badge-warning rounded-circle badge-notifications ml-auto">8</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'author-courses' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}author-courses.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">layers</i>
+    <span class="sidebar-menu-text">Courses</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'author-quiz-manager' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}author-quiz-manager.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">assignment</i>
+    <span class="sidebar-menu-text">Quiz Manager</span>
+  </a>
+</li>  
+<li class="sidebar-menu-item{% if slug === 'author-earnings' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}author-earnings.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">local_atm</i>
+    <span class="sidebar-menu-text">Earnings</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'author-reports' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}author-reports.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">pie_chart</i>
+    <span class="sidebar-menu-text">Reports</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'author-payout' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="{{ prefix or '' }}author-payout.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">credit_card</i>
+    <span class="sidebar-menu-text">Payout</span>
+  </a>
+</li>
+<li class="sidebar-menu-item{% if slug === 'login' %} active{% endif %}">
+  <a class="sidebar-menu-button" href="login.html">
+    <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">exit_to_app</i>
+    <span class="sidebar-menu-text">Logout</span>
+  </a>
+</li>

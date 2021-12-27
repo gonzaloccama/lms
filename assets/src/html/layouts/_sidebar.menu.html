@@ -1,0 +1,32 @@
+
+<ul class="sidebar-menu">
+  <li class="sidebar-menu-item{% if slug === 'index' %} active{% endif %}">
+    <a class="sidebar-menu-button" href="{{ home_url }}">
+
+      <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">photo_filter</i>
+      <span class="sidebar-menu-text">Overview</span>
+    </a>
+  </li>
+</ul>
+
+<div class="sidebar-heading">Student</div>
+<div class="sidebar-block p-0">
+  <ul class="sidebar-menu mt-0">
+    {% include 'layouts/_sidebar.menu.student.html' %}
+  </ul>
+</div>
+
+
+<div class="sidebar-heading">Author</div>
+<div class="sidebar-block p-0">
+  <ul class="sidebar-menu mt-0">
+    {% include 'layouts/_sidebar.menu.author.html' %}
+  </ul>
+</div>
+
+<div class="sidebar-heading">Admin</div>
+<div class="sidebar-block p-0">
+  <ul class="sidebar-menu mt-0">
+    {% include 'layouts/_sidebar.menu.admin.html' %}
+  </ul>
+</div>

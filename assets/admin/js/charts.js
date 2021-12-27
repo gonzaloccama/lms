@@ -113,7 +113,7 @@ module.exports = _typeof;
 
 /***/ }),
 
-/***/ "./src/js/plugins/charts.js":
+/***/ "../../src/js/plugins/charts.js":
 /*!**********************************!*\
   !*** ./src/js/plugins/charts.js ***!
   \**********************************/
@@ -387,7 +387,7 @@ if (window !== undefined) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/plugins/charts.js */"./src/js/plugins/charts.js");
+module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/plugins/charts.js */"../../src/js/plugins/charts.js");
 
 
 /***/ })

@@ -86,7 +86,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/preloader.js":
+/***/ "../../src/js/preloader.js":
 /*!*****************************!*\
   !*** ./src/js/preloader.js ***!
   \*****************************/
@@ -111,7 +111,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/preloader.js */"./src/js/preloader.js");
+module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/preloader.js */"../../src/js/preloader.js");
 
 
 /***/ })

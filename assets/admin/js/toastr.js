@@ -86,7 +86,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/plugins/toastr.js":
+/***/ "../../src/js/plugins/toastr.js":
 /*!**********************************!*\
   !*** ./src/js/plugins/toastr.js ***!
   \**********************************/
@@ -138,7 +138,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/plugins/toastr.js */"./src/js/plugins/toastr.js");
+module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/plugins/toastr.js */"../../src/js/plugins/toastr.js");
 
 
 /***/ })

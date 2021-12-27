@@ -1,0 +1,185 @@
+{% set members = [{
+  avatar: "assets/images/256_rsz_1andy-lee-642320-unsplash.jpg",
+  name: "Jenell D. Matney", 
+  title: "Founder and CEO"
+}, {
+  avatar: "assets/images/256_daniel-gaffey-1060698-unsplash.jpg",
+  name: "Sherri J. Cardenas", 
+  title: "Software Engineer"
+}] %}
+
+<div class="app-properties-container{% if 'fixed' in prefix %} {{ containerClass }} page__container{% endif %}">
+  <div class="row h-100 m-0">
+    <div class="col-lg-9 py-grid d-flex flex-column h-100" data-perfect-scrollbar>
+      
+      {% set properties = [{
+        image: "assets/images/re/christopher-harris-55545-unsplash.png",
+        title: "Single Family House",
+        price: "$750k",
+        location: "Marleybone, London",
+        sqm: "2,300",
+        rooms: "2",
+        favorite: true
+      }, {
+        image: "assets/images/re/evelyn-paris-95853-unsplash.png",
+        title: "Single Family House",
+        price: "$830k",
+        location: "Adamsside, Egypt",
+        sqm: "3,100",
+        rooms: "3"
+      }, {
+        image: "assets/images/re/joshua-case-639994-unsplash.png",
+        title: "Single Family House",
+        price: "$970k",
+        location: "Yasmineton, Colombia",
+        sqm: "4,500",
+        rooms: "5"
+      }, {
+        image: "assets/images/re/joshua-hanks-659912-unsplash.png",
+        title: "Single Family House",
+        price: "$670k",
+        location: "South Etha, Liberia",
+        sqm: "3,400",
+        rooms: "4"
+      }, {
+        image: "assets/images/re/marcus-schorn-553219-unsplash.png",
+        title: "Single Family House",
+        price: "$750k",
+        location: "Marleybone, Georgia",
+        sqm: "1,200",
+        rooms: "2"
+      }, {
+        image: "assets/images/re/terrah-holly-16329-unsplash.png",
+        title: "Single Family House",
+        price: "$800k",
+        location: "Arnulfoberg, Germany",
+        sqm: "3,200",
+        rooms: "3"
+      }] %}
+
+      <div class="{{ containerClass }} page__container">
+
+        <div class="card card-form d-flex flex-column flex-sm-row">
+          <div class="card-form__body card-body-form-group flex">
+            <div class="form-row align-items-center">
+              <div class="col-sm-auto">
+                <div class="form-group">
+                  <label for="filter_name">Location</label>
+                  <input id="filter_name" type="text" class="form-control" placeholder="Enter keyword">
+                </div>
+              </div>
+              <div class="col-sm-auto">
+                <div class="form-group">
+                  <label for="filter_buckets">Distance</label><br>
+                  <select id="filter_buckets" class="custom-select">
+                    <option value="all">&lt; 2km</option>
+                    <option value="all">&lt; 5km</option>
+                    <option value="all">&lt; 10km</option>
+                    <option value="all">&lt; 15km</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-auto">
+                <div class="form-group">
+                  <label for="filter_assigned">Area Size</label><br>
+                  <select id="filter_assigned" class="custom-select">
+                    <option value="all">50+ sq. meters</option>
+                    <option value="all">70+ sq. meters</option>
+                    <option value="all">100+ sq. meters</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-auto">
+                <div class="form-group price-range-width">
+                  <label for="price_range">Price</label>
+                  <input id="price_range" type="text" 
+                    data-toggle="ion-rangeslider"
+                    data-min="0"
+                    data-max="100"
+                    data-from="50"
+                    data-step="5"
+                    data-max-postfix="+"
+                    data-prefix="$">
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn bg-white border-left border-top border-top-sm-0 rounded-top-0 rounded-top-sm rounded-left-sm-0"><i class="material-icons text-primary">refresh</i></button>
+        </div>
+
+        <div class="my-3"><strong class="text-dark-gray">Find the Best Property</strong></div>
+        <div class="row">
+          {% for item in properties %}
+          <div class="col-sm-6 col-xl-4">
+            <div class="card property-card">
+              <div class="property-card__image-container">
+                <img src="{{ item.image }}" alt="..." class="card-img">
+                <div class="property-card__image-content">
+                  <div class="card-body d-flex align-items-center">
+                    <div class="avatar-group flex">
+                      <a href="javascript:void(0);" class="avatar avatar-xs text-decoration-none">
+                        <span class="avatar-title rounded-circle">
+                          <span class="material-icons icon-16pt">favorite{% if not item.favorite %}_outline{% endif %}</span>
+                        </span>
+                      </a>
+                    </div>
+                    <a class="d-flex align-items-center" href=""><i class="material-icons mr-1 icon-20pt">remove_red_eye</i> <small>327</small></a>
+                  </div>
+                  <div class="property-card__image-title card-body">
+                    <span class="h3 text-white font-weight-normal">{{ item.price }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <p><a href="#" class="text-body"><strong>{{ item.title }}</strong></a></p>
+                <small class="text-dark-gray d-flex align-items-center mb-2">
+                  <i class="material-icons icon-16pt text-muted-light mr-1">place</i> {{ item.location }}
+                </small>
+                <div class="d-flex align-items-center">
+                  <small class="mr-3 text-dark-gray d-flex align-items-center">
+                    <i class="material-icons icon-16pt text-muted-light mr-1">zoom_out_map</i> {{ item.sqm }} sqm
+                  </small>
+                  <small class="ml-auto text-dark-gray d-flex align-items-center">
+                    <i class="material-icons icon-16pt text-muted-light mr-1">weekend</i> {{ item.rooms }} rooms
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% import "components/pagination.html" as pagination %}
+        {{ pagination.component(pages=4, first=true, last=true, align='center') }}
+      </div>
+
+    </div>
+    <div class="col-lg-3 px-0 bg-white border-left d-flex flex-column">
+      <div class="d-flex flex-column border-bottom mb-3 pt-3">
+        <div class="px-3"><strong class="text-dark-gray">Inbox</strong></div>
+        <div data-simplebar class="h-100">
+          <div class="list-group list-group-flush position-relative z-0">
+
+            {% for item in members %}
+            <div class="list-group-item d-flex media align-items-center">
+              <a href="#" class="avatar avatar-sm media-left mr-3">
+                <img src="{{ item.avatar }}" alt="Avatar" class="avatar-img rounded-circle">
+              </a>
+              <div class="media-body">
+                <p class="m-0">
+                  <a href="#" class="text-body"><strong>{{ item.name }}</strong></a><br>
+                  <span class="text-muted">{{ item.title }}</span>
+                </p>
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+      <div class="flex d-flex flex-column">
+        <div class="px-3 mb-3"><strong class="text-dark-gray">Map View</strong></div>
+        <div class="h-100 bg-light" id="map"></div>
+      </div>
+    </div>
+  </div>
+</div>

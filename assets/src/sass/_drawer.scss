@@ -1,0 +1,16 @@
+.mdk-drawer__content {
+  background: transparent;
+}
+
+.mdk-header-layout .mdk-drawer__content {
+  top: $navbar-height;
+}
+
+#events-drawer {
+  &[data-persistent] {
+    width: 300px;
+  }
+  .mdk-drawer__content {
+    width: 300px;
+  }
+}

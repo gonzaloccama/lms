@@ -86,7 +86,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/plugins/ion-rangeslider.js":
+/***/ "../../src/js/plugins/ion-rangeslider.js":
 /*!*******************************************!*\
   !*** ./src/js/plugins/ion-rangeslider.js ***!
   \*******************************************/
@@ -110,7 +110,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/plugins/ion-rangeslider.js */"./src/js/plugins/ion-rangeslider.js");
+module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/plugins/ion-rangeslider.js */"../../src/js/plugins/ion-rangeslider.js");
 
 
 /***/ })

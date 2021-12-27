@@ -17,9 +17,18 @@ class Dashboard extends CI_Controller
 
     function index()
     {
-		$data['page_title'] = 'Administrador - Dashboard';
-		$data['title'] = 'Administrador';
-		$data['sub_title'] = 'Cursos';
+		if (!$this->session->userdata('is_logged') || !($this->session->userdata('role_id') == 1)){
+			redirect('/auth/login');
+		}
+
+		$data['info'] = array(
+			'page_title' => 'Administrador - Dashboard',
+			'title' => 'Dashboard',
+			'sub_title' => 'Cursos',
+			'active' => 1,
+			'script' => 'admin/script',
+			'sidebar' => 'admin/template/sidebar',
+		);
 
 		$data['course'] = $this->dashboard->ListTable(1, 'course');
 

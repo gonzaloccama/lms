@@ -86,7 +86,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/plugins/quill.js":
+/***/ "../../src/js/plugins/quill.js":
 /*!*********************************!*\
   !*** ./src/js/plugins/quill.js ***!
   \*********************************/
@@ -127,7 +127,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/plugins/quill.js */"./src/js/plugins/quill.js");
+module.exports = __webpack_require__(/*! /Users/demi/Documents/GitHub/admin-educate/src/js/plugins/quill.js */"../../src/js/plugins/quill.js");
 
 
 /***/ })

@@ -1,0 +1,141 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Table of contents:
+
+1. CORE (Bootstrap + MDK Layout)
+2. Theme
+  2.1 flexbox
+  2.2 icons
+  2.3 type
+  2.4 layout
+  2.5 dropdown
+  2.6 header
+  2.7 search-form
+  2.8 navbar
+  2.9 navbar-dark
+  2.10 navbar-light
+  2.11 drawer
+  2.12 sidebar
+  2.13 card
+  2.14 table
+  2.15 button
+  2.16 breadcrumb
+  2.17 form
+  2.18 flatpickr
+  2.19 input-group
+  2.20 progress
+  2.21 tabs
+  2.22 list-group
+  2.23 borders
+  2.24 custom-checkbox-toggle
+  2.25 alert
+  2.26 loader
+  2.27 helpers
+  2.28 badge
+  2.29 avatar
+  2.30 chart
+  2.31 pagination
+  2.32 page-separator
+3. Apps
+  3.1 apps/trello
+  3.2 apps/chat
+  3.3 apps/email
+  3.4 apps/properties
+  3.5 apps/tickets
+4. Plugin Overrides
+  4.1 daterangepicker
+  4.2 toastr
+  4.3 fullcalendar
+  4.4 preloader
+5. Pages
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[1. CORE]
+-------------------------------------------------------------------*/
+// Custom User Override
+@import './user-variables';
+
+// Variables
+@import './variables';
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+// MDK
+@import 'material-design-kit/src/style';
+// Google Font
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+/*-----------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+2. App
+-------------------------------------------------------------------*/
+@import './flexbox';
+@import './icons';
+@import './type';
+@import './layout';
+@import './layout-mini';
+@import './dropdown';
+@import './header';
+@import './search-form';
+@import './navbar';
+@import './navbar-dark';
+@import './navbar-light';
+@import './drawer';
+@import './sidebar';
+// @import './sidebar-dark';
+// @import './sidebar-light';
+@import './card';
+@import './table';
+@import './button';
+@import './breadcrumb';
+@import './form';
+@import './flatpickr';
+@import './input-group';
+@import './progress';
+@import './tabs';
+@import './list-group';
+@import './borders';
+@import './custom-checkbox-toggle';
+@import './alert';
+@import './loader';
+@import './helpers';
+@import './badge';
+@import './avatar';
+@import './chart';
+@import './pagination';
+@import './page-separator';
+/*-----------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+3. Apps
+-------------------------------------------------------------------*/
+@import './apps/trello';
+@import './apps/chat';
+@import './apps/email';
+@import './apps/tickets';
+/*-----------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+4. Plugin Overrides
+-------------------------------------------------------------------*/
+@import './daterangepicker';
+@import './toastr';
+@import './fullcalendar';
+@import './preloader';
+/*-----------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+5. Pages / Components
+-------------------------------------------------------------------*/
+@import './dashboard-area-tabs';
+@import './dashboard-location-tabs';
+@import './todo';
+@import './skills';
+@import './login';
+@import './login-centered-boxed';
+@import './stories';
+@import './map';
+@import './pricing';
+@import './pages/student-course-purchase';
+/*-----------------------------------------------------------------*/

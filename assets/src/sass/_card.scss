@@ -1,0 +1,230 @@
+.card {
+  margin-bottom: $grid-gutter-width / 2;
+  box-shadow: 0 1px 0 0 rgba(229,229,229,0.50);
+  
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $grid-gutter-width;
+  }
+}
+
+.card-stats {
+  padding: 1rem 1.25rem;
+}
+
+.card-margin { 
+  margin-bottom: $grid-gutter-width / 2;
+  
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $grid-gutter-width;
+  }
+}
+
+.form-row .card.form-row__card {
+  margin-bottom: 10px;
+}
+
+.card-list > .card:last-child {
+  margin-bottom: 0;
+}
+
+.card-group {
+  @include media-breakpoint-up(sm) {
+    margin-bottom: $grid-gutter-width;
+    box-shadow: 0 1px 0 0 rgba(229,229,229,0.50);
+
+    @if $enable-rounded {
+      @include border-radius($card-border-radius);
+    }
+    > .card {
+      box-shadow: none;
+      border: $card-border-width solid $card-border-color;
+    }
+  }
+}
+
+.card-header {
+  background-color: #F7F8F9;
+}
+.card-header__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: $font-family-base;
+  letter-spacing: 0;
+  color: $headings-color;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .active > & {
+    color: $primary;
+  }
+}
+
+.card-header-large {
+  padding-top: 1.4375rem;
+  padding-bottom: 1.4375rem;
+}
+
+.card-header-sm {
+  padding-top: .85rem;
+  padding-bottom: .85rem;
+}
+
+.card-footer {
+  background-color: white;
+}
+
+.card-body-lg {
+  padding: 1.6875rem;
+}
+.card-body-x-lg {
+  padding-left: 1.6875rem;
+  padding-right: 1.6875rem;
+}
+
+.card__course {
+  .card-header-dark {
+    vertical-align: middle;
+    .card-header__title, .card-header__title a {
+      color: #ffffff;
+      &:hover { text-decoration: none;}
+      .course__title { color: rgba(255,255,255,.54); display: block; font-size: .9rem; margin-bottom: 5px; }
+    }
+    
+  }
+  .card-header {
+    position: relative;
+    height: 140px;
+    overflow: hidden;
+    text-align: center;
+  }
+}
+///////////////////////////////////////////////////////
+// CARD GROUP combined with GRID                     //
+//                                                   //
+// <div class="row card-group-row">                  //
+//   <div class="col-md-4 card-group-row__col">      //
+//     <div class="card card-group-row__card"></div> //
+//   </div>                                          //
+// </div>                                            //
+///////////////////////////////////////////////////////
+
+.card-group-row {
+  display: flex;
+  flex-flow: row wrap;
+  &__col {
+    display: flex;
+  }
+  &__card {
+    flex: 1 0 0;
+  }
+}
+.card-margin-md-negative-40 {
+  @include media-breakpoint-up(md) {
+    margin-top:-40px !important;
+  }
+}
+
+
+/////////////
+// GENERAL //
+/////////////
+.form-row .card.form-row__card {
+  margin-bottom: 10px;
+}
+
+.card-list > .card:last-child {
+  margin-bottom: 0;
+}
+
+//////////
+// TYPO //
+//////////
+
+.card-title {
+  > a {
+    color: $headings-color;
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/////////////
+// SPACING //
+/////////////
+
+.card, 
+.card-group {
+  margin-bottom: 1.5rem;
+}
+
+.card-2by1 .card-body {
+  padding: $card-spacer-x/2 $card-spacer-x;
+}
+.card-sm .card-body {
+  padding: $card-spacer-x/2;
+}
+
+// IMAGE
+
+[class*=card-img] {
+  position: relative;
+  height: 200px;
+  object-fit: cover;
+  // @TODO 
+  // https://medium.com/@primozcigler/neat-trick-for-css-object-fit-fallback-on-edge-and-other-browsers-afbc53bbb2c3
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(theme-color('dark'), .125);
+  }
+}
+
+/////////////
+// COLUMNS //
+/////////////
+
+@include media-breakpoint-up(sm) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .card-columns--3 {
+    column-count: $card-columns-count;
+  }
+}
+
+/////////////////////////
+// CARD OPTIONS BUTTON //
+/////////////////////////
+
+.card__options {
+  position: absolute;
+  right: $card-spacer-x;
+  top: $card-spacer-x/2;
+}
+
+///////////////////
+// MEDIA IN CARD //
+///////////////////
+
+.card {
+  .media-left {
+    padding-right: $card-spacer-x/2;
+  }
+  .media-right {
+    padding-left: $card-spacer-x/2;
+  }
+}
+
